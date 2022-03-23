@@ -4,10 +4,6 @@ jsFile.src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js";
 document.body.appendChild(jsFile);
 
 
-
-var curThumbImg = null;
-
-
 jQuery('.dropdown-trigger.style-scope.ytd-menu-renderer > .style-scope.yt-icon-button > .style-scope.ytd-menu-renderer').on('click', function() {
     //THIS IS INTERESTING
     var parentElm = jQuery(this).closest('ytd-grid-video-renderer');
