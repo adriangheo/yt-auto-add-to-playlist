@@ -9,21 +9,13 @@ var curThumbImg = null;
 
 
 jQuery('.dropdown-trigger.style-scope.ytd-menu-renderer > .style-scope.yt-icon-button > .style-scope.ytd-menu-renderer').on('click', function() {
-    curThumbImg = jQuery(this).closest('ytd-grid-video-renderer');
+    //THIS IS INTERESTING
+    var parentElm = jQuery(this).closest('ytd-grid-video-renderer');
+    jQuery('yt-formatted-string:contains(Save to playlist)').click();
+
+    var myTimeout = setTimeout(function(){
+        parentElm.remove();
+    }, 1000);
+    myTimeout;
 })
 
-
-
-const poller = setInterval(function() {
-    const btnSaveToPlaylistgExists = jQuery('yt-formatted-string:contains(Save to playlist)').closest('tp-yt-paper-item').length
-    if (btnSaveToPlaylistgExists) {
-
-
-        jQuery('yt-formatted-string:contains(Save to playlist)').closest('tp-yt-paper-item').on('click', function() {
-            console.log('aaaa');
-            curThumbImg.remove();
-        });;
-
-        clearInterval(poller);
-    }
-}, 1000);
